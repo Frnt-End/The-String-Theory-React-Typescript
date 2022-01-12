@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Indie+Flower&display=swap');
+/* COLORS */
+$black: #000;
+$dark: rgb(40,35,30);
+$darker-gray: rgb(50,45,40);
+$dark-gray: rgb(80 75 70);
+$gray: rgb(110 100 90);
+$light-gray: #d4c9be;
+$lighter-gray: rgb(235, 232, 227);
+$retro-beige: #bd9e77;
+$white: #fff;
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+
+    &:focus-visible {
+      outline: none;
+      border: none;
+    }
+    
+    &::selection {
+      background: $retro-beige;
+      color: $white;
+    }
+
+    &::-webkit-selection {
+      background: $retro-beige;
+      color: $white;
+    }
+
+    &::-moz-selection {
+      background: $retro-beige;
+      color: $white;
+    }
+}
+
+
+::placeholder {
+  color: $light-gray;
+}
+
+
+body {
+  background-image: url("Img/bg.jpg");
+  background-color: #FFF;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+  font-family: 'Caveat Brush', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+select::-ms-expand {
+  display: none; 
+}
+
+.all {
+
+  padding-top: 5vh;
+  width: 100vw;
+
+  
+    .right {
+      text-align: right;
+    }
+
+    .left {
+      text-align: left;
+    }
+
+    .show {
+      display: flex;
+    }
+    
+    .hide {
+      display: none;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 90%;
+      margin: 0 auto;
+
+
+      .header {
+
+        width: 100%;
+        color: $dark;
+        margin: 0 auto;
+        position: relative;
+        z-index: 6;
+        padding: 10px;
+          
+
+          h1 {
+            color: $dark;
+            text-align: center;
+            margin: 0 auto;
+            font-weight: lighter;
+            font-size: 4em;
+            padding: 0;
+            text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+            text-transform: uppercase;
+            margin: 0 0 30px 0;
+          }
+
+          h2 {
+            font-weight: 500;
+            text-align: center;
+          }
+      }
+
+        .form-notation {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          margin: 30px auto;
+
+          .dot-input {
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+
+              input {
+                text-overflow: ellipsis;
+                padding-right: 4px;
+              }
+          
+
+              input, select {
+                font-family: inherit;
+                width: 25vw;
+                color: $dark;
+                font-size: calc(28px + 8 * (100vw - 320px) / 980);
+                font-weight: 500;
+                padding: 0;
+                background: none;
+                border: 1px solid rgba(255, 255, 255, 0);
+                border-bottom-color: $lighter-gray;
+                border-bottom-width: 2.2px; 
+                transition: 0.3s ease-in-out;
+                outline: none;
+                -webkit-appearance: none;
+                -moz-appearance:    none;
+                appearance:         none;
+
+                &:-webkit-autofill::first-line {
+                  font-family: inherit;
+                  font-size: inherit;
+                }
+
+                &:-webkit-autofill {
+
+                  font-family: 'Caveat Brush', cursive !important;
+                  -webkit-text-fill-color: $dark;
+
+                  &, &:hover, &:focus, &:focus-within, &:focus-visible {
+                      // border: 1px solid $main;
+                      //-webkit-text-fill-color: $dark;
+                      -webkit-box-shadow: 0 0 0px 1000px rgba($white, 0) inset;
+                      box-shadow: 0 0 0px 1000px rgba($white, 0) inset;
+                      transition: background-color 5000s ease-in-out 0s;
+                      font-family: 'Caveat Brush', cursive !important;
+                  }
+              }}
+
+              select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;      
+                -webkit-padding-start: 2px;
+                -moz-padding-start: 2px;
+                position: relative;
+                background-image: url(Img/arrow.png);  
+                background-size: 7%;
+                background-repeat: no-repeat;
+                background-position: center right;    
+
+                  option, .option-item {
+                    font-family: inherit;
+                    font-size: calc(20px + 4 * (100vw - 320px) / 980);
+                    border: none;
+                    font-weight: normal !important;
+
+                      &:hover, :checked {
+                        box-shadow: 0 0 10px 100px $retro-beige inset; 
+                        background-color: $retro-beige; 
+                        background: $retro-beige; 
+                      }
+                        
+                  }
+                
+                    &::-ms-expand {
+                      display: none;
+                    }
+           }}
+    
+            
+    
+            .the-dot {
+              color: #bd9e77;
+              font-size: 3.1em;
+              margin: 4px 2px 0 0;
+              font-weight: 400;
+              pointer-events: none;
+            }
+
+            .btn-result {
+              
+              margin-left: 20px;
+              
+              button {
+                color: $darker-gray;
+                font-family: 'Indie Flower', cursive;
+                font-size: 1.5em;
+                border: none;
+                border-radius: 40%;
+                width: 1.5em;
+                height: 1em;
+                text-align: center;
+                cursor: pointer;
+                cursor: hand;
+                transition: 0.3s ease-in-out;
+                font-weight: 700;
+                font-size: 2em;
+                padding: 0;
+                line-height: .9em;
+                background: rgba($retro-beige,.3);
+
+
+              &:hover {
+                background: rgba($retro-beige,.8);
+                border: none;
+                outline: none;
+              }
+          }
+
+            }
+      
+        }
+
+        .result {
+          color: $retro-beige;
+          font-size: 3em;
+          margin: 0 auto;
+        }
+
+        .form-error {
+          font-size: calc(24px + 2 * (100vw - 320px) / 980);
+          text-align: center;
+          background: rgb(136, 250, 255, .4);
+          margin: 15px auto;
+        }
+
+        .author {
+          width: 90%;
+          display: flex;
+          justify-content: space-around;
+          position: absolute;
+          bottom: 5vh;
+
+          p {
+            color: $dark;
+            font-size: calc(20px + 2 * (100vw - 320px) / 980);
+            transition: .3s ease;
+            font-weight: bold;
+          }
+
+
+          a {
+              color: $dark;
+              font-size: calc(20px + 2 * (100vw - 320px) / 980);
+              transition: .3s ease;
+              font-weight: normal;
+
+                &:hover {
+                  color: $retro-beige;
+                }
+          }
+        }
+       
+  }
+  }
+
+
+@media (min-width: 1100px) {
+    .all .container .form-notation select {
+        background-size: 7%;
+      }
+    }
+  
+
+@media (max-width: 1099px) {
+  .all {
+
+    padding-top: 3vh;
+  
+      .container {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 5vh;
+
+          .header {
+
+            h2 {
+              text-align: left;
+              font-size: 2.2em;
+            }
+          }
+
+          .form-notation {
+
+            display: block;
+            justify-content: center;
+            width: 90%;
+            margin: 0 auto;
+
+              .dot-input {
+                justify-content: center;
+
+                select, input {
+                  font-size: 2.5em;
+                  width: 100%;
+                  text-align: left;
+                }
+  
+                select {    
+                  background-size: 7%;
+  
+                  option {
+                    font-size: 2em;
+                  }
+                }
+              }
+
+              .btn-result {
+                text-align: center;
+                margin-left: 0;
+
+                  button {
+                    border-radius: 6px;
+                    width: 100%;
+                    height: 40px;
+                  }
+              }
+          }
+
+        .result {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+        }
+
+        
+    }
+}}
