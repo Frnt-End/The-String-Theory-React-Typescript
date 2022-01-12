@@ -115,7 +115,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
         </div>
         
         <div className="author">
-              <p>↩ <a href="https://Frnt-End.github.io/The-String-Theory-React-Typescript"> Repo</a></p>
+              <p>↩ <a href="https://github.com/Frnt-End/The-String-Theory-React-Typescript"> Repo</a></p>
                <p><a href="https://nirit.website">nirit.website </a> ↪</p>
             </div>
       </div>
