@@ -43,19 +43,20 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
 
 
   const CheckForm = () => {
-    input.str.length < 1 ? setError(true) : checkResult();
+    !input.str ? setError(true) : checkResult();
   }
 
   const checkResult = () => {
-     resultChecker = (window as any).eval(`"${input.str}".` + input.method);
-    input.str === resultChecker || resultChecker === "undefined"|| resultChecker === null
+    const trimedInput = input.str.trim();
+     resultChecker = (window as any).eval(`"${trimedInput}".` + input.method);
+     trimedInput === resultChecker || resultChecker === "undefined"|| resultChecker === null
     || resultChecker === "" ? setError(true) : returnValue();
   }
 
   const returnValue = () => {
     setResult(resultChecker.toString())
     setError(false)
-    console.log(`result: ${resultChecker} str: ${input.str}`)
+    //console.log(`trimed: ${input.str.trim()} str: ${input.str}`)
   }
   
   let arrList = ArrList();
