@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/The-String-Theory-React-Typescript/static/css/main.8760c989.css",
-    "main.js": "/The-String-Theory-React-Typescript/static/js/main.c4743290.js",
+    "main.css": "/The-String-Theory-React-Typescript/static/css/main.b545031f.css",
+    "main.js": "/The-String-Theory-React-Typescript/static/js/main.514e6910.js",
     "static/js/787.a989e146.chunk.js": "/The-String-Theory-React-Typescript/static/js/787.a989e146.chunk.js",
     "static/media/bg.jpg": "/The-String-Theory-React-Typescript/static/media/bg.476b2d468d2bd6874ad4.jpg",
     "index.html": "/The-String-Theory-React-Typescript/index.html",
-    "main.8760c989.css.map": "/The-String-Theory-React-Typescript/static/css/main.8760c989.css.map",
-    "main.c4743290.js.map": "/The-String-Theory-React-Typescript/static/js/main.c4743290.js.map",
+    "main.b545031f.css.map": "/The-String-Theory-React-Typescript/static/css/main.b545031f.css.map",
+    "main.514e6910.js.map": "/The-String-Theory-React-Typescript/static/js/main.514e6910.js.map",
     "787.a989e146.chunk.js.map": "/The-String-Theory-React-Typescript/static/js/787.a989e146.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8760c989.css",
-    "static/js/main.c4743290.js"
+    "static/css/main.b545031f.css",
+    "static/js/main.514e6910.js"
   ]
 }

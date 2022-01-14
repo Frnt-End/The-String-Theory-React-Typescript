@@ -19,8 +19,11 @@ const maxlength = 20;
 
 export default function App() {
 
-  const [error, setError] = useState(false);
+  let resultChecker: string = "";
+  let arrList = ArrList();
 
+  const [error, setError] = useState(false);
+  const [id, setId] = useState(0);
   const [input, setInput] = useState<IProps>({
     str: "Foo Fighters",
     method: "slice(0, 3)"
@@ -28,7 +31,8 @@ export default function App() {
   
   let [result, setResult] = useState("Foo")
 
- 
+  
+
 
 const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setInput({
@@ -38,8 +42,12 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   e.preventDefault()
 }
   
-  let resultChecker: string = "";
  
+  useEffect(() => {
+    setId(arrList.findIndex(item => item.method ===  input.method))
+}, [id, arrList, input.method]);
+
+
 
 
   const CheckForm = () => {
@@ -56,10 +64,8 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   const returnValue = () => {
     setResult(resultChecker.toString())
     setError(false)
-    //console.log(`trimed: ${input.str.trim()} str: ${input.str}`)
-  }
+   }
   
-  let arrList = ArrList();
   
 
   return (
@@ -99,7 +105,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
                 required
               >
                   {arrList.map((e:any, key) => (
-                    <option className="option-item" key={key} value={e}>{e}</option>
+                    <option className="option-item" key={key} value={e.method}>{e.method}</option>
                   ))}
             </select>
             </div>
@@ -114,11 +120,17 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
             <div className={error ? "form-error" : "form-error hide"}>
                 Maybe try a different string..
         </div>
+
+        <div className="details">
+             <h3>JS String <span>{arrList[id].name}</span> Method</h3>
+              <p><span>Syntax: </span>{arrList[id].syntax}</p>
+              <p><span>Definition: </span>{arrList[id].definition}</p>
+          </div>
         
-        <div className="author">
+          <div className="author">
               <p>↩ <a href="https://github.com/Frnt-End/The-String-Theory-React-Typescript"> Repo</a></p>
                <p><a href="https://nirit.website">nirit.website </a> ↪</p>
-            </div>
+          </div>
       </div>
   </div>
   );

@@ -4,7 +4,7 @@ $black: #000;
 $dark: rgb(40,35,30);
 $darker-gray: rgb(50,45,40);
 $dark-gray: rgb(80 75 70);
-$gray: rgb(110 100 90);
+$gray: #bdad9d;
 $light-gray: #d4c9be;
 $lighter-gray: rgb(235, 232, 227);
 $retro-beige: #bd9e77;
@@ -269,12 +269,33 @@ select::-ms-expand {
           margin: 15px auto;
         }
 
+        .details {
+
+          margin: 40px auto;
+          color: $gray;
+
+          h3 {
+            font-size: calc(24px + 2 * (100vw - 320px) / 980);
+            font-weight: normal;
+
+              span {
+                font-weight: bold;
+              }
+          }
+
+          p {
+            font-size: calc(20px + 2 * (100vw - 320px) / 980);
+
+            span {
+              font-weight: bold;
+            }
+          }
+        }
+
         .author {
           width: 90%;
           display: flex;
           justify-content: space-around;
-          position: absolute;
-          bottom: 5vh;
 
           p {
             color: $dark;
