@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.scss";
 import ArrList from "./Components/ArrList"
 
@@ -19,7 +19,7 @@ const maxlength = 20;
 
 export default function App() {
 
-  let resultChecker: string = "";
+  let newResult: string = "";
   let arrList = ArrList();
 
   const [error, setError] = useState(false);
@@ -32,6 +32,11 @@ export default function App() {
   let [result, setResult] = useState("Foo")
 
   
+  const previousResult = useRef("");
+
+  useEffect(() => {
+    previousResult.current = result;
+  }, [result]);
 
 
 const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -51,18 +56,18 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
 
 
   const CheckForm = () => {
-    !input.str ? setError(true) : checkResult();
+    !input.str || newResult === previousResult.current ? setError(true) : checkResult();
   }
 
   const checkResult = () => {
     const trimedInput = input.str.trim();
-     resultChecker = (window as any).eval(`"${trimedInput}".` + input.method);
-     trimedInput === resultChecker || resultChecker === "undefined"|| resultChecker === null
-    || resultChecker === "" ? setError(true) : returnValue();
+     newResult = (window as any).eval(`"${trimedInput}".` + input.method);
+     newResult === previousResult.current || newResult === "undefined"|| newResult === null
+    || newResult === "" ? setError(true) : returnValue();
   }
 
   const returnValue = () => {
-    setResult(resultChecker.toString())
+    setResult(newResult.toString())
     setError(false)
    }
   
@@ -72,7 +77,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
     <div className="all">
       <div className="container">
         <div className="header">
-          <h1>-- String Methods Practice --</h1>
+          <h1>-- Practice JS String Methods --</h1>
           <h2>🧪 Test the provided string OR type your own.</h2>
           <h2>✨ Choose one of the methods from the dropdown.</h2>
           <h2>🍦 click the "=" button to view the results.</h2>       
@@ -118,11 +123,11 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
                 {result}</p>
             </div>
             <div className={error ? "form-error" : "form-error hide"}>
-                Maybe try a different string..
+                <p>Try something else..<span>˖° (づ￣ ³￣)づ ━━☆ﾟ.*</span></p>
         </div>
 
         <div className="details">
-             <h3>JS String <span>{arrList[id].name}</span> Method</h3>
+             <h3>The <span>{arrList[id].name}</span> Method:</h3>
               <p><span>Syntax: </span>{arrList[id].syntax}</p>
               <p><span>Definition: </span>{arrList[id].definition}</p>
           </div>
@@ -130,7 +135,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
           <div className="author">
               <p>↩ <a href="https://github.com/Frnt-End/The-String-Theory-React-Typescript"> Repo</a></p>
                <p><a href="https://nirit.website">nirit.website </a> ↪</p>
-          </div>
+        </div>
       </div>
   </div>
   );

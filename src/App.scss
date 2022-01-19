@@ -3,8 +3,8 @@
 $black: #000;
 $dark: rgb(40,35,30);
 $darker-gray: rgb(50,45,40);
-$dark-gray: rgb(80 75 70);
-$gray: #bdad9d;
+$dark-gray: #ad9f91;
+$gray: #c5b8a8;
 $light-gray: #d4c9be;
 $lighter-gray: rgb(235, 232, 227);
 $retro-beige: #bd9e77;
@@ -246,7 +246,7 @@ select::-ms-expand {
 
 
               &:hover {
-                background: rgba($retro-beige,.8);
+                background: rgba($retro-beige,.7);
                 border: none;
                 outline: none;
               }
@@ -263,20 +263,29 @@ select::-ms-expand {
         }
 
         .form-error {
-          font-size: calc(24px + 2 * (100vw - 320px) / 980);
-          text-align: center;
           background: rgb(136, 250, 255, .4);
           margin: 15px auto;
+
+            p {
+              font-size: calc(24px + 2 * (100vw - 320px) / 980);
+              text-align: center;
+              margin: 0;
+
+                span {
+                  font-size: calc(14px + 2 * (100vw - 320px) / 980);
+                }
+            }        
         }
 
         .details {
 
           margin: 40px auto;
           color: $gray;
+          text-align: center;
 
           h3 {
             font-size: calc(24px + 2 * (100vw - 320px) / 980);
-            font-weight: normal;
+            color: inherit;
 
               span {
                 font-weight: bold;
