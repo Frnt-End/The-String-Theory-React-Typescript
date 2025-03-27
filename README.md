@@ -4,7 +4,7 @@ React Typescript App - Practice String Methods using a form.
 
 👉 [Watch DEMO](https://Frnt-End.github.io/The-String-Theory-React-Typescript)
 
-![Create List Form](src/Img/bg-small.png "Create List Form")
+![String Methods Practice](src/Img/bg-small.png "String Methods Practice")
 
 ## String Methods Practice UI
 
